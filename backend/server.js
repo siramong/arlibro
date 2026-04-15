@@ -157,6 +157,11 @@ app.get('*', (req, res) => {
 
 // ====== START SERVER ======
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Servidor en http://localhost:${PORT}`);
-});
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`✅ Servidor en http://localhost:${PORT}`);
+  });
+}
+
+export default app;
