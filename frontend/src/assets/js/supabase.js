@@ -2,15 +2,12 @@
 let SUPABASE_URL = '';
 let SUPABASE_ANON_KEY = '';
 
-// Tabla donde se guardan las visitas
 const TABLE_NAME = 'page_visits';
 
-// ====== INICIALIZAR SUPABASE ======
-window.supabase = {
+export const supabase = {
   url: SUPABASE_URL,
   key: SUPABASE_ANON_KEY,
 
-  // Cargar configuración desde el servidor
   async loadConfig() {
     try {
       const response = await fetch('/api/config');
@@ -27,7 +24,6 @@ window.supabase = {
     }
   },
 
-  // registrar una visita
   async registerVisit(pageData = {}) {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
       await this.loadConfig();
@@ -67,7 +63,6 @@ window.supabase = {
     }
   },
 
-  // obtener estadísticas
   async getStats(filters = {}) {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
       await this.loadConfig();
@@ -100,7 +95,6 @@ window.supabase = {
     }
   },
 
-  // contar visitas totales
   async getTotalVisits() {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
       await this.loadConfig();
@@ -127,7 +121,6 @@ window.supabase = {
     }
   },
 
-  // stats por página
   async getPageStats() {
     const stats = await this.getStats();
     const grouped = {};
@@ -147,8 +140,8 @@ window.supabase = {
 // Registrar visita automáticamente cuando carga
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    window.supabase.registerVisit();
+    supabase.registerVisit();
   });
 } else {
-  window.supabase.registerVisit();
+  supabase.registerVisit();
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARLibro — Libro Digital con Realidad Aumentada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="stars"></canvas>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">AR<span>Libro</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Funciones</a></li>
+    <li><a href="#tesis">Tesis</a></li>
+    <li><a href="#how">¿Cómo Funciona?</a></li>
+  </ul>
+  <a href="#features" class="nav-cta">Comienza Ahora</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Matemática en <span>Realidad Aumentada</span></h1>
+    <p class="hero-subtitle">Explora conceptos geométricos y algebraicos en 3D interactivo</p>
+    <a href="#features" class="btn-primary">Ver Funciones</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+  <h2>Funciones Principales</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>Visualización 3D</h3>
+      <p>Explora gráficas y figuras geométricas en tres dimensiones</p>
+    </div>
+    <div class="feature-card">
+      <h3>Interactividad</h3>
+      <p>Manipula variables y observa cambios en tiempo real</p>
+    </div>
+    <div class="feature-card">
+      <h3>Realidad Aumentada</h3>
+      <p>Proyecta modelos en tu espacio físico</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESIS -->
+<section id="tesis" class="tesis">
+  <h2>Propuesta Académica</h2>
+  <div class="tesis-content">
+    <p>ARLibro es un proyecto de investigación que explora cómo la Realidad Aumentada puede mejorar la \
+comprensión de conceptos matemáticos abstractos.</p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="how">
+  <h2>¿Cómo Funciona?</h2>
+  <div class="steps">
+    <div class="step" data-step="1">
+      <h3>Paso 1</h3>
+      <p>Abre ARLibro y selecciona un concepto</p>
+    </div>
+    <div class="step" data-step="2">
+      <h3>Paso 2</h3>
+      <p>Visualiza la representación 3D</p>
+    </div>
+    <div class="step" data-step="3">
+      <h3>Paso 3</h3>
+      <p>Interactúa y aprende</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS WIDGET -->
+<div id="stats-widget" class="stats-widget">
+  <div class="stat">
+    <span class="stat-number">0</span>
+    <span class="stat-label">Visitas</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">0</span>
+    <span class="stat-label">Usuarios</span>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

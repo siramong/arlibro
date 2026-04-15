@@ -21,6 +21,34 @@ pnpm-debug.log*
 
 # Dependencies
 node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build
+frontend/dist/
+backend/dist/
+
+# Testing
+coverage/
+
+# Misc
+.cache/
 
 # Build / dist
 build/
