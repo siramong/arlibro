@@ -662,4 +662,5 @@ footer p { font-size: .8rem; color: rgba(232,234,246,.3); }
   .hero-visual { min-height: 340px; }
   .how-grid { grid-template-columns: 1fr; gap: 50px; }
   nav .nav-links { display: none; }
+  .nav-stats { display: none; }
 }

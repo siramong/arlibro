@@ -1,17 +1,22 @@
 // ====== CONFIGURACIÓN SUPABASE ======
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || (window.SUPABASE_CONFIG?.url);
+const SUPABASE_ANON_KEY = import.meta.env?.VITE_SUPABASE_ANON_KEY || (window.SUPABASE_CONFIG?.key);
 
 // Tabla donde se guardan las visitas
 const TABLE_NAME = 'page_visits';
 
 // ====== INICIALIZAR SUPABASE ======
-export const supabase = {
+window.supabase = {
   url: SUPABASE_URL,
   key: SUPABASE_ANON_KEY,
 
   // registrar una visita
   async registerVisit(pageData = {}) {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      console.warn('Supabase no configurado. Agrega credenciales al .env');
+      return null;
+    }
+
     try {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
         method: 'POST',
@@ -43,10 +48,11 @@ export const supabase = {
 
   // obtener estadísticas
   async getStats(filters = {}) {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
+
     try {
       let query = `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=*`;
 
-      // Agregar filtros si hay
       if (filters.page_url) {
         query += `&page_url=eq.${encodeURIComponent(filters.page_url)}`;
       }
@@ -72,6 +78,8 @@ export const supabase = {
 
   // contar visitas totales
   async getTotalVisits() {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return 0;
+
     try {
       const response = await fetch(
         `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=count=eq.true`,
@@ -109,5 +117,11 @@ export const supabase = {
   },
 };
 
-// Exportar tabla name para referencia
-export const VISITS_TABLE = TABLE_NAME;
+// Registrar visita automáticamente cuando carga
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.supabase.registerVisit();
+  });
+} else {
+  window.supabase.registerVisit();
+}

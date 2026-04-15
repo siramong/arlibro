@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/stats-widget.css" />
 </head>
 
 <body>
@@ -27,6 +28,10 @@
     <li><a href="#how">Cómo funciona</a></li>
     <li><a href="#cta" class="nav-cta">Empezar</a></li>
   </ul>
+  <div class="nav-stats">
+    <span class="nav-stats-label">Visitantes hoy:</span>
+    <span class="nav-stats-count" id="navStatsCount">0</span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -193,10 +198,27 @@
   </div>
 </section>
 
+<!-- LIVE ANALYTICS -->
+<section id="analytics">
+  <div class="analytics-container">
+    <div class="section-label">✦ Comunidad</div>
+    <h2>Impacto de <span class="accent">ARLibro</span></h2>
+    <p class="section-intro">
+      En tiempo real, docentes y estudiantes alrededor están descubriendo el poder de la realidad aumentada en educación.
+    </p>
+    
+    <div class="analytics-content" id="analyticsContent">
+      <!-- Se inyecta con JS -->
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>© 2026 ARLibro — Proyecto académico de Matemática con Realidad Aumentada</p>
 </footer>
 
-<script type="module" src="assets/js/main.js"></script>
+<script src="assets/js/supabase.js"></script>
+<script src="assets/js/stats-widget.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
