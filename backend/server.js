@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { createClient } from '@supabase/supabase-js';
 import cors from 'cors';
@@ -27,6 +28,8 @@ if (SUPABASE_URL && SUPABASE_KEY) {
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
+
+const spaIndexPath = path.resolve(__dirname, '../frontend/dist/index.html');
 
 // ====== API ROUTES ======
 
@@ -143,7 +146,13 @@ app.get('/api/health', (req, res) => {
 
 // Servir SPA (Single Page App)
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
+  if (fs.existsSync(spaIndexPath)) {
+    return res.sendFile(spaIndexPath);
+  }
+
+  return res.status(503).send(
+    'Frontend no compilado. Ejecuta "npm run build" en la raiz del proyecto antes de iniciar el servidor.'
+  );
 });
 
 // ====== START SERVER ======

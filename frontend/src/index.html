@@ -8,6 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/how.css" />
+  <link rel="stylesheet" href="assets/css/tesis.css" />
+  <link rel="stylesheet" href="assets/css/stats-widget.css" />
 </head>
 
 <body>
@@ -22,63 +28,171 @@
   <ul class="nav-links">
     <li><a href="#features">Funciones</a></li>
     <li><a href="#tesis">Tesis</a></li>
-    <li><a href="#how">¿Cómo Funciona?</a></li>
+    <li><a href="#how">Cómo funciona</a></li>
+    <li><a href="#cta" class="nav-cta">Empezar</a></li>
   </ul>
-  <a href="#features" class="nav-cta">Comienza Ahora</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Matemática en <span>Realidad Aumentada</span></h1>
-    <p class="hero-subtitle">Explora conceptos geométricos y algebraicos en 3D interactivo</p>
-    <a href="#features" class="btn-primary">Ver Funciones</a>
-  </div>
-</section>
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-badge">✦ Tecnología educativa del futuro</div>
 
-<!-- FEATURES -->
-<section id="features" class="features">
-  <h2>Funciones Principales</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Visualización 3D</h3>
-      <p>Explora gráficas y figuras geométricas en tres dimensiones</p>
+    <h1>
+      Aprende con
+      <span class="line-glow">Realidad Aumentada</span>
+      en Matemática
+    </h1>
+
+    <p class="hero-sub">
+      Libro digital de actividades para estudiantes de 4to de educación básica que transforma conceptos abstractos en experiencias visuales interactivas.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#tesis" class="btn-primary">Ver proyecto</a>
+      <a href="#how" class="btn-ghost">Cómo funciona</a>
     </div>
-    <div class="feature-card">
-      <h3>Interactividad</h3>
-      <p>Manipula variables y observa cambios en tiempo real</p>
-    </div>
-    <div class="feature-card">
-      <h3>Realidad Aumentada</h3>
-      <p>Proyecta modelos en tu espacio físico</p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="ar-book">
+      <div class="book-spine"></div>
+      <div class="book-cover">
+        <div class="scan-line"></div>
+        <div class="book-title-el">ARLibro</div>
+        <div class="book-subtitle-el">Matemática 4to EGB</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TESIS -->
-<section id="tesis" class="tesis">
-  <h2>Propuesta Académica</h2>
-  <div class="tesis-content">
-    <p>ARLibro es un proyecto de investigación que explora cómo la Realidad Aumentada puede mejorar la \
-comprensión de conceptos matemáticos abstractos.</p>
+<section id="tesis">
+  <div class="features-header">
+    <div class="section-label">✦ Proyecto de Tesis</div>
+    <h2>Libro digital de actividades con <span class="accent">Realidad Aumentada</span></h2>
+    <p class="section-intro">
+      Propuesta educativa innovadora aplicada a la enseñanza de Matemática en 4to de educación básica.
+    </p>
+  </div>
+
+  <div class="features-grid">
+
+    <div class="feat-card">
+      <div class="feat-icon">❗</div>
+      <div class="feat-title">Problemática</div>
+      <p class="feat-desc">
+        La enseñanza tradicional de Matemática presenta dificultades en la comprensión de conceptos abstractos,
+        generando desmotivación y bajo rendimiento en estudiantes de 4to de básica.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">Justificación</div>
+      <p class="feat-desc">
+        Se propone el uso de tecnologías interactivas como la realidad aumentada para mejorar la motivación,
+        comprensión y participación activa en el proceso de aprendizaje.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📌</div>
+      <div class="feat-title">Objetivo general</div>
+      <p class="feat-desc">
+        Desarrollar un libro digital con realidad aumentada para mejorar el aprendizaje de Matemática en 4to de básica.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📚</div>
+      <div class="feat-title">Objetivos específicos</div>
+      <p class="feat-desc">
+        • Diseñar actividades matemáticas interactivas<br>
+        • Implementar elementos de realidad aumentada<br>
+        • Evaluar la mejora en la comprensión del estudiante
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🧠</div>
+      <div class="feat-title">Marco teórico</div>
+      <p class="feat-desc">
+        Se fundamenta en el aprendizaje significativo de Ausubel y el constructivismo de Piaget,
+        donde el estudiante construye conocimiento mediante experiencias visuales y activas.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📘</div>
+      <div class="feat-title">Descripción del proyecto</div>
+      <p class="feat-desc">
+        El proyecto consiste en un libro digital con actividades matemáticas que integran modelos 3D
+        mediante realidad aumentada para facilitar la comprensión de contenidos.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Uso de Realidad Aumentada</div>
+      <p class="feat-desc">
+        Permite visualizar objetos matemáticos en 3D sobre el entorno físico del estudiante,
+        facilitando la interacción con conceptos abstractos.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">✨</div>
+      <div class="feat-title">Beneficios</div>
+      <p class="feat-desc">
+        Mayor motivación, aprendizaje visual, mejor retención de conocimientos y participación activa en clase.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">👩‍💻</div>
+      <div class="feat-title">Autoras</div>
+      <p class="feat-desc">
+        Katherine Suchuzhañay<br>
+        Hanna Castillo
+      </p>
+    </div>
+
   </div>
 </section>
 
 <!-- HOW -->
-<section id="how" class="how">
-  <h2>¿Cómo Funciona?</h2>
-  <div class="steps">
-    <div class="step" data-step="1">
-      <h3>Paso 1</h3>
-      <p>Abre ARLibro y selecciona un concepto</p>
-    </div>
-    <div class="step" data-step="2">
-      <h3>Paso 2</h3>
-      <p>Visualiza la representación 3D</p>
-    </div>
-    <div class="step" data-step="3">
-      <h3>Paso 3</h3>
-      <p>Interactúa y aprende</p>
+<section id="how">
+  <div class="section-label">✦ Proceso</div>
+  <h2>¿Cómo funciona?</h2>
+
+  <div class="how-grid">
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Accede al libro</div>
+          <p class="step-desc">Versión digital o impresa con marcadores AR.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Escanea con la app</div>
+          <p class="step-desc">La aplicación detecta el contenido automáticamente.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Interactúa</div>
+          <p class="step-desc">Explora modelos 3D y actividades matemáticas.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -95,6 +209,10 @@ comprensión de conceptos matemáticos abstractos.</p>
   </div>
 </div>
 
-<script type="module" src="/src/main.js"></script>
+<footer>
+  <p>© 2026 ARLibro — Proyecto académico de Matemática con Realidad Aumentada</p>
+</footer>
+
+<script type="module" src="/main.js"></script>
 </body>
 </html>

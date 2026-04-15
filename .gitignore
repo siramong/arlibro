@@ -1,3 +1,5 @@
+dist/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -59,3 +61,8 @@ coverage/
 .env
 .env.*
 !.env.example
+
+
+# Legacy files
+
+legacy_landing/
