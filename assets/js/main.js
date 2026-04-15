@@ -1,3 +1,11 @@
+/* ======== SUPABASE - REGISTRAR VISITAS ======== */
+import { supabase } from './supabase.js';
+
+// Registrar visita cuando carga la página
+document.addEventListener('DOMContentLoaded', () => {
+  supabase.registerVisit();
+});
+
 /* -- Cursor -------------------------------------- */
 const dot = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
