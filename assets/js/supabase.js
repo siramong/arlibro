@@ -1,6 +1,6 @@
 // ====== CONFIGURACIÓN SUPABASE ======
-const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || (window.SUPABASE_CONFIG?.url);
-const SUPABASE_ANON_KEY = import.meta.env?.VITE_SUPABASE_ANON_KEY || (window.SUPABASE_CONFIG?.key);
+let SUPABASE_URL = '';
+let SUPABASE_ANON_KEY = '';
 
 // Tabla donde se guardan las visitas
 const TABLE_NAME = 'page_visits';
@@ -10,10 +10,31 @@ window.supabase = {
   url: SUPABASE_URL,
   key: SUPABASE_ANON_KEY,
 
+  // Cargar configuración desde el servidor
+  async loadConfig() {
+    try {
+      const response = await fetch('/api/config');
+      if (!response.ok) throw new Error('Error cargando config');
+      const data = await response.json();
+      SUPABASE_URL = data.supabase.url;
+      SUPABASE_ANON_KEY = data.supabase.key;
+      this.url = SUPABASE_URL;
+      this.key = SUPABASE_ANON_KEY;
+      return true;
+    } catch (error) {
+      console.error('Error cargando configuración Supabase:', error);
+      return false;
+    }
+  },
+
   // registrar una visita
   async registerVisit(pageData = {}) {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      console.warn('Supabase no configurado. Agrega credenciales al .env');
+      await this.loadConfig();
+    }
+
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      console.warn('Supabase no configurado. Verifica que el servidor esté ejecutándose.');
       return null;
     }
 
@@ -48,6 +69,9 @@ window.supabase = {
 
   // obtener estadísticas
   async getStats(filters = {}) {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      await this.loadConfig();
+    }
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
 
     try {
@@ -78,6 +102,9 @@ window.supabase = {
 
   // contar visitas totales
   async getTotalVisits() {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      await this.loadConfig();
+    }
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return 0;
 
     try {

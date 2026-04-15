@@ -8,21 +8,33 @@ Proyecto estático para la landing de ARLibro.
 arlibro/
 ├── index.html
 ├── README.md
-├── .gitignore
+├── supabase-setup.sql
 └── assets/
     ├── css/
-    │   └── styles.css
+    │   ├── base.css
+    │   ├── hero.css
+    │   ├── how.css
+    │   ├── stats-widget.css
+    │   └── tesis.css
     └── js/
-        └── main.js
+        ├── main.js
+        ├── stats-widget.js
+        ├── supabase.js
+        └── modules/
+            ├── cursor.js
+            ├── nav-scroll.js
+            ├── starfield.js
+            └── step-reveal.js
 ```
 
 ## Qué se mejoró
 
 - Se separó el código en archivos más legibles:
-  - `index.html`: estructura del contenido
-  - `assets/css/styles.css`: estilos
-  - `assets/js/main.js`: comportamiento e interacciones
-- Se dejó una base simple para escalar el proyecto sin tener todo en un único archivo.
+  - `index.html`: estructura y carga de assets
+  - `assets/css/*.css`: estilos por responsabilidades
+  - `assets/js/modules/*.js`: interacciones separadas por feature
+  - `assets/js/main.js`: inicializador general
+- Se eliminó el archivo monolítico para evitar duplicidad de estilos y simplificar el mantenimiento.
 
 ## Cómo ejecutar
 
