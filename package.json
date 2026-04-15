@@ -2,6 +2,7 @@
   "name": "arlibro",
   "version": "1.0.0",
   "description": "Libro Digital con Realidad Aumentada para Matemática",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev:frontend": "cd frontend && npm run dev",

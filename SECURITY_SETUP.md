@@ -17,31 +17,44 @@ npm install
 ```
 
 ### 2. Crear archivo `.env`
-Copia `.env.example` a `.env` y llena tus credenciales:
+El archivo de entorno se configura dentro de `backend/`.
+
+En Linux/macOS:
+
 ```bash
+cd backend
 cp .env.example .env
+```
+
+En Windows PowerShell:
+
+```powershell
+cd backend
+Copy-Item .env.example .env
 ```
 
 Edita `.env` con tus credenciales de Supabase:
 ```
 VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiI...
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiI...
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiI...   # fallback opcional
 ```
 
 ### 3. Ejecutar el servidor
 ```bash
-npm start
+npm run dev:backend
 ```
 
 El servidor se ejecutará en `http://localhost:3000`
 
 ## 🔒 Seguridad
 - ✅ Las credenciales se mantienen en `.env` (no versionado)
-- ✅ El endpoint `/api/config` sirve las credenciales de forma segura
-- ✅ El HTML no expone credenciales hardcodeadas
-- ✅ En producción, el servidor debe usar HTTPS
+- ✅ El backend usa `SUPABASE_SERVICE_ROLE_KEY` cuando está disponible
+- ✅ El frontend no expone claves privadas hardcodeadas
+- ✅ En producción, el servidor/plataforma debe usar HTTPS
 
 ## 📝 Notas
 - El archivo `.env` debe estar en `.gitignore`
-- La clave ANON es pública por naturaleza, pero así se centraliza su gestión
-- Las reglas RLS en Supabase protegen los datos real mente
+- Si falta `VITE_SUPABASE_URL`, los endpoints de datos quedan deshabilitados y responden `503`
+- La clave ANON es pública por naturaleza, pero se recomienda usar `SUPABASE_SERVICE_ROLE_KEY` en backend
+- Las reglas RLS y politicas de Supabase siguen siendo fundamentales para proteger datos
