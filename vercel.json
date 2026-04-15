@@ -1,8 +1,4 @@
 {
-  "version": 2,
-  "installCommand": "npm install",
-  "buildCommand": "npm run build",
-  "outputDirectory": "frontend/dist",
   "experimentalServices": {
     "frontend": {
       "entrypoint": "frontend",

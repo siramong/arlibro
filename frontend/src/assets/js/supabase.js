@@ -1,10 +1,12 @@
 // ====== API CLIENT ======
 // Todas las llamadas a Supabase van a través del backend
 
+const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+
 export const api = {
   async registerVisit(pageData = {}) {
     try {
-      const response = await fetch('/api/visits', {
+      const response = await fetch(`${API_BASE}/visits`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -23,7 +25,7 @@ export const api = {
 
   async getTotalVisits() {
     try {
-      const response = await fetch('/api/stats/total');
+      const response = await fetch(`${API_BASE}/stats/total`);
       if (!response.ok) throw new Error('Error obteniendo stats');
       const data = await response.json();
       return data.total || 0;
@@ -35,7 +37,7 @@ export const api = {
 
   async getPageStats() {
     try {
-      const response = await fetch('/api/stats/by-page');
+      const response = await fetch(`${API_BASE}/stats/by-page`);
       if (!response.ok) throw new Error('Error obteniendo stats por página');
       return await response.json();
     } catch (error) {
@@ -46,7 +48,7 @@ export const api = {
 
   async getAllVisits() {
     try {
-      const response = await fetch('/api/visits');
+      const response = await fetch(`${API_BASE}/visits`);
       if (!response.ok) throw new Error('Error obteniendo visitas');
       return await response.json();
     } catch (error) {
