@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ARLibro — Libro Digital con Realidad Aumentada</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel='stylesheet' href='assets/css/styles.css' />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body>
 
-<!-- Custom cursor -->
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
-
-<!-- Stars canvas -->
 <canvas id="stars"></canvas>
 
 <!-- NAV -->
@@ -23,10 +23,9 @@
   <a href="#" class="nav-logo">AR<span>Libro</span></a>
   <ul class="nav-links">
     <li><a href="#features">Funciones</a></li>
+    <li><a href="#tesis">Tesis</a></li>
     <li><a href="#how">Cómo funciona</a></li>
-    <li><a href="#subjects">Materias</a></li>
-    <li><a href="#testimonials">Opiniones</a></li>
-    <li><a href="#cta" class="nav-cta">Empezar gratis</a></li>
+    <li><a href="#cta" class="nav-cta">Empezar</a></li>
   </ul>
 </nav>
 
@@ -34,218 +33,170 @@
 <section id="hero">
   <div class="hero-text">
     <div class="hero-badge">✦ Tecnología educativa del futuro</div>
+
     <h1>
       Aprende con
       <span class="line-glow">Realidad Aumentada</span>
-      en cada página
+      en Matemática
     </h1>
+
     <p class="hero-sub">
-      ARLibro transforma actividades educativas en experiencias 3D inmersivas. Apunta tu cámara y
-      observa cómo los conceptos cobran vida frente a tus ojos.
+      Libro digital de actividades para estudiantes de 4to de educación básica que transforma conceptos abstractos en experiencias visuales interactivas.
     </p>
+
     <div class="hero-btns">
-      <a href="#cta" class="btn-primary">Descargar gratis</a>
-      <a href="#how" class="btn-ghost">Ver demo ↗</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num" data-target="12">0</div>
-        <div class="stat-label">Materias</div>
-      </div>
-      <div>
-        <div class="stat-num" data-target="200">0</div>
-        <div class="stat-label">Actividades AR</div>
-      </div>
-      <div>
-        <div class="stat-num" data-target="48">0</div>
-        <div class="stat-label">Países</div>
-      </div>
+      <a href="#tesis" class="btn-primary">Ver proyecto</a>
+      <a href="#how" class="btn-ghost">Cómo funciona</a>
     </div>
   </div>
 
   <div class="hero-visual">
-    <div class="ar-marker"></div>
-    <div class="ar-marker"></div>
-    <div class="ar-marker"></div>
     <div class="ar-book">
       <div class="book-spine"></div>
       <div class="book-cover">
         <div class="scan-line"></div>
-        <div class="book-qr" id="qrGrid"></div>
         <div class="book-title-el">ARLibro</div>
-        <div class="book-subtitle-el">Actividades con Realidad Aumentada</div>
+        <div class="book-subtitle-el">Matemática 4to EGB</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section id="features">
+<!-- TESIS -->
+<section id="tesis">
   <div class="features-header">
-    <div class="section-label">✦ Funcionalidades</div>
-    <h2>Todo lo que necesitas<br><span class="accent">en un solo libro</span></h2>
-    <p class="section-intro">Diseñado para docentes, estudiantes y familias que quieren aprender diferente.</p>
+    <div class="section-label">✦ Proyecto de Tesis</div>
+    <h2>Libro digital de actividades con <span class="accent">Realidad Aumentada</span></h2>
+    <p class="section-intro">
+      Propuesta educativa innovadora aplicada a la enseñanza de Matemática en 4to de educación básica.
+    </p>
   </div>
+
   <div class="features-grid">
-    <div class="feat-card" style="--feat-color:#00f0ff">
-      <div class="feat-icon">🔭</div>
-      <div class="feat-title">Visualización 3D</div>
-      <p class="feat-desc">Modelos tridimensionales animados que el estudiante puede rotar, escalar y explorar desde cualquier ángulo.</p>
+
+    <div class="feat-card">
+      <div class="feat-icon">❗</div>
+      <div class="feat-title">Problemática</div>
+      <p class="feat-desc">
+        La enseñanza tradicional de Matemática presenta dificultades en la comprensión de conceptos abstractos,
+        generando desmotivación y bajo rendimiento en estudiantes de 4to de básica.
+      </p>
     </div>
-    <div class="feat-card" style="--feat-color:#a855f7">
-      <div class="feat-icon">🎮</div>
-      <div class="feat-title">Actividades gamificadas</div>
-      <p class="feat-desc">Misiones, puntos y recompensas integrados directamente en la experiencia de realidad aumentada.</p>
+
+    <div class="feat-card">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">Justificación</div>
+      <p class="feat-desc">
+        Se propone el uso de tecnologías interactivas como la realidad aumentada para mejorar la motivación,
+        comprensión y participación activa en el proceso de aprendizaje.
+      </p>
     </div>
-    <div class="feat-card" style="--feat-color:#ff2d78">
-      <div class="feat-icon">📊</div>
-      <div class="feat-title">Reportes del docente</div>
-      <p class="feat-desc">Dashboard en tiempo real con el progreso individual y grupal, tiempos de interacción y logros completados.</p>
+
+    <div class="feat-card">
+      <div class="feat-icon">📌</div>
+      <div class="feat-title">Objetivo general</div>
+      <p class="feat-desc">
+        Desarrollar un libro digital con realidad aumentada para mejorar el aprendizaje de Matemática en 4to de básica.
+      </p>
     </div>
-    <div class="feat-card" style="--feat-color:#fbbf24">
-      <div class="feat-icon">🌐</div>
-      <div class="feat-title">Sin internet requerido</div>
-      <p class="feat-desc">Descarga el contenido una vez y úsalo offline. Perfecto para aulas con conectividad limitada.</p>
+
+    <div class="feat-card">
+      <div class="feat-icon">📚</div>
+      <div class="feat-title">Objetivos específicos</div>
+      <p class="feat-desc">
+        • Diseñar actividades matemáticas interactivas<br>
+        • Implementar elementos de realidad aumentada<br>
+        • Evaluar la mejora en la comprensión del estudiante
+      </p>
     </div>
-    <div class="feat-card" style="--feat-color:#34d399">
-      <div class="feat-icon">🔒</div>
-      <div class="feat-title">Seguro para niños</div>
-      <p class="feat-desc">Entorno cerrado sin publicidad, sin redes sociales. Diseñado con estándares COPPA y protección de datos.</p>
+
+    <div class="feat-card">
+      <div class="feat-icon">🧠</div>
+      <div class="feat-title">Marco teórico</div>
+      <p class="feat-desc">
+        Se fundamenta en el aprendizaje significativo de Ausubel y el constructivismo de Piaget,
+        donde el estudiante construye conocimiento mediante experiencias visuales y activas.
+      </p>
     </div>
-    <div class="feat-card" style="--feat-color:#f97316">
+
+    <div class="feat-card">
+      <div class="feat-icon">📘</div>
+      <div class="feat-title">Descripción del proyecto</div>
+      <p class="feat-desc">
+        El proyecto consiste en un libro digital con actividades matemáticas que integran modelos 3D
+        mediante realidad aumentada para facilitar la comprensión de contenidos.
+      </p>
+    </div>
+
+    <div class="feat-card">
       <div class="feat-icon">📱</div>
-      <div class="feat-title">Multiplataforma</div>
-      <p class="feat-desc">Compatible con iOS, Android y tablets. Un solo libro, todos los dispositivos de tu aula.</p>
+      <div class="feat-title">Uso de Realidad Aumentada</div>
+      <p class="feat-desc">
+        Permite visualizar objetos matemáticos en 3D sobre el entorno físico del estudiante,
+        facilitando la interacción con conceptos abstractos.
+      </p>
     </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">✨</div>
+      <div class="feat-title">Beneficios</div>
+      <p class="feat-desc">
+        Mayor motivación, aprendizaje visual, mejor retención de conocimientos y participación activa en clase.
+      </p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">👩‍💻</div>
+      <div class="feat-title">Autoras</div>
+      <p class="feat-desc">
+        Katherine Suchuzhañay<br>
+        Hanna Castillo
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW -->
 <section id="how">
   <div class="section-label">✦ Proceso</div>
-  <h2>¿Cómo <span class="accent">funciona</span>?</h2>
+  <h2>¿Cómo funciona?</h2>
+
   <div class="how-grid">
-    <div class="steps" id="stepsContainer">
+    <div class="steps">
+
       <div class="step">
         <div class="step-num">01</div>
         <div>
-          <div class="step-title">Recibe el libro físico o digital</div>
-          <p class="step-desc">Cada página tiene marcadores AR especiales. Funciona con el libro impreso o en la pantalla.</p>
+          <div class="step-title">Accede al libro</div>
+          <p class="step-desc">Versión digital o impresa con marcadores AR.</p>
         </div>
       </div>
+
       <div class="step">
         <div class="step-num">02</div>
         <div>
-          <div class="step-title">Descarga la app ARLibro</div>
-          <p class="step-desc">Disponible gratuitamente en App Store y Google Play. Configúrala en menos de 2 minutos.</p>
+          <div class="step-title">Escanea con la app</div>
+          <p class="step-desc">La aplicación detecta el contenido automáticamente.</p>
         </div>
       </div>
+
       <div class="step">
         <div class="step-num">03</div>
         <div>
-          <div class="step-title">Apunta la cámara a la página</div>
-          <p class="step-desc">El sistema detecta el marcador automáticamente y proyecta el contenido 3D sobre el libro.</p>
+          <div class="step-title">Interactúa</div>
+          <p class="step-desc">Explora modelos 3D y actividades matemáticas.</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div>
-          <div class="step-title">¡Explora e interactúa!</div>
-          <p class="step-desc">Toca, rota y completa actividades directamente en el espacio aumentado. El aprendizaje ocurre solo.</p>
-        </div>
-      </div>
-    </div>
-    <div class="phone-wrap">
-      <div class="phone">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-ar-view">
-            <div class="ar-frame">
-              <div class="ar-object" id="arObj">🧬</div>
-            </div>
-          </div>
-          <div class="phone-ui-bar">
-            <span>▶ REC</span>
-            <span id="arLabel">Célula vegetal · Biología</span>
-            <span>⚙</span>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- SUBJECTS -->
-<section id="subjects">
-  <div class="subjects-header">
-    <div class="section-label">✦ Contenidos</div>
-    <h2>Materias <span class="accent">disponibles</span></h2>
-    <p class="section-intro">Contenido curricular validado por docentes para todos los niveles.</p>
-  </div>
-  <div class="subjects-scroll">
-    <div class="subject-pill" style="--pill-color:#00f0ff"><span class="subject-emoji">🔬</span><span class="subject-name">Ciencias Naturales</span></div>
-    <div class="subject-pill" style="--pill-color:#a855f7"><span class="subject-emoji">🧮</span><span class="subject-name">Matemáticas</span></div>
-    <div class="subject-pill" style="--pill-color:#ff2d78"><span class="subject-emoji">🌍</span><span class="subject-name">Geografía</span></div>
-    <div class="subject-pill" style="--pill-color:#fbbf24"><span class="subject-emoji">⚗️</span><span class="subject-name">Química</span></div>
-    <div class="subject-pill" style="--pill-color:#34d399"><span class="subject-emoji">🏛️</span><span class="subject-name">Historia</span></div>
-    <div class="subject-pill" style="--pill-color:#f97316"><span class="subject-emoji">🔭</span><span class="subject-name">Astronomía</span></div>
-    <div class="subject-pill" style="--pill-color:#00f0ff"><span class="subject-emoji">💻</span><span class="subject-name">Tecnología</span></div>
-    <div class="subject-pill" style="--pill-color:#a855f7"><span class="subject-emoji">🎨</span><span class="subject-name">Arte y Cultura</span></div>
-    <div class="subject-pill" style="--pill-color:#ff2d78"><span class="subject-emoji">🧠</span><span class="subject-name">Filosofía</span></div>
-    <div class="subject-pill" style="--pill-color:#fbbf24"><span class="subject-emoji">🌱</span><span class="subject-name">Educación Ambiental</span></div>
-    <div class="subject-pill" style="--pill-color:#34d399"><span class="subject-emoji">🗣️</span><span class="subject-name">Lengua y Literatura</span></div>
-    <div class="subject-pill" style="--pill-color:#f97316"><span class="subject-emoji">🧬</span><span class="subject-name">Biología</span></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="test-header">
-    <div class="section-label">✦ Opiniones</div>
-    <h2>Lo que dicen <span class="accent">docentes y familias</span></h2>
-  </div>
-  <div style="overflow: hidden;">
-    <div class="test-track" id="testTrack">
-      <!-- cards duplicated in JS for infinite scroll -->
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-orb cta-orb-1"></div>
-  <div class="cta-orb cta-orb-2"></div>
-  <div class="section-label">✦ Empieza hoy</div>
-  <h2>El futuro del aprendizaje<br><span class="accent">está en tus manos</span></h2>
-  <p>Descarga ARLibro gratis y activa las primeras 20 actividades sin costo. Sin tarjeta de crédito.</p>
-  <div class="cta-btns">
-    <a href="#" class="btn-big btn-primary">📱 App Store</a>
-    <a href="#" class="btn-big btn-ghost">▶ Google Play</a>
-  </div>
-  <div class="price-tag">
-    <div class="price-item">
-      <div class="price-val">Gratis</div>
-      <div class="price-desc">20 actividades</div>
-    </div>
-    <div class="price-item">
-      <div class="price-val">$4.99</div>
-      <div class="price-desc">Mes / aula completa</div>
-    </div>
-    <div class="price-item">
-      <div class="price-val">$39</div>
-      <div class="price-desc">Año / institución</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <a href="#" class="foot-logo">AR<span>Libro</span></a>
-  <p>© 2025 ARLibro. Tecnología educativa con realidad aumentada.</p>
-  <p style="font-size:.75rem; color:rgba(232,234,246,.2);">Hecho con ♥ para el aula</p>
+  <p>© 2026 ARLibro — Proyecto académico de Matemática con Realidad Aumentada</p>
 </footer>
 
-<script src='assets/js/main.js'></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-

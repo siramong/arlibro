@@ -78,15 +78,17 @@ window.addEventListener('scroll', () => {
 const qr = document.getElementById('qrGrid');
 const pattern = [1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1];
 
-pattern.forEach((on, i) => {
-  const cell = document.createElement('div');
-  cell.className = 'qr-cell';
-  cell.style.animationDelay = i * 40 + 'ms';
-  if (!on) {
-    cell.style.opacity = '0';
-  }
-  qr.appendChild(cell);
-});
+if (qr) {
+  pattern.forEach((on, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'qr-cell';
+    cell.style.animationDelay = i * 40 + 'ms';
+    if (!on) {
+      cell.style.opacity = '0';
+    }
+    qr.appendChild(cell);
+  });
+}
 
 /* -- Counter animation ----------------------------- */
 const counters = document.querySelectorAll('[data-target]');
@@ -123,7 +125,10 @@ const heroObs = new IntersectionObserver(
   { threshold: 0.3 }
 );
 
-heroObs.observe(document.querySelector('.hero-stats'));
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) {
+  heroObs.observe(heroStats);
+}
 
 /* -- Steps scroll reveal --------------------------- */
 const stepEls = document.querySelectorAll('.step');
@@ -157,19 +162,21 @@ let arIdx = 0;
 const arObjEl = document.getElementById('arObj');
 const arLabelEl = document.getElementById('arLabel');
 
-setInterval(() => {
-  arIdx = (arIdx + 1) % arItems.length;
-  arObjEl.style.opacity = '0';
-  arObjEl.style.transform = 'scale(.5) translateY(0)';
+if (arObjEl && arLabelEl) {
+  setInterval(() => {
+    arIdx = (arIdx + 1) % arItems.length;
+    arObjEl.style.opacity = '0';
+    arObjEl.style.transform = 'scale(.5) translateY(0)';
 
-  setTimeout(() => {
-    arObjEl.textContent = arItems[arIdx].emoji;
-    arLabelEl.textContent = arItems[arIdx].label;
-    arObjEl.style.transition = 'opacity .5s, transform .5s';
-    arObjEl.style.opacity = '1';
-    arObjEl.style.transform = '';
-  }, 300);
-}, 2500);
+    setTimeout(() => {
+      arObjEl.textContent = arItems[arIdx].emoji;
+      arLabelEl.textContent = arItems[arIdx].label;
+      arObjEl.style.transition = 'opacity .5s, transform .5s';
+      arObjEl.style.opacity = '1';
+      arObjEl.style.transform = '';
+    }, 300);
+  }, 2500);
+}
 
 /* -- Testimonials ---------------------------------- */
 const testData = [
@@ -218,18 +225,20 @@ const testData = [
 ];
 
 const track = document.getElementById('testTrack');
-[...testData, ...testData].forEach((t) => {
-  const card = document.createElement('div');
-  card.className = 'test-card';
-  card.innerHTML = `
-    <div class="test-stars">${'★'.repeat(t.stars)}</div>
-    <p class="test-text">"${t.text}"</p>
-    <div class="test-author">
-      <div class="test-avatar">${t.initials}</div>
-      <div>
-        <div class="test-name">${t.name}</div>
-        <div class="test-role">${t.role}</div>
-      </div>
-    </div>`;
-  track.appendChild(card);
-});
+if (track) {
+  [...testData, ...testData].forEach((t) => {
+    const card = document.createElement('div');
+    card.className = 'test-card';
+    card.innerHTML = `
+      <div class="test-stars">${'★'.repeat(t.stars)}</div>
+      <p class="test-text">"${t.text}"</p>
+      <div class="test-author">
+        <div class="test-avatar">${t.initials}</div>
+        <div>
+          <div class="test-name">${t.name}</div>
+          <div class="test-role">${t.role}</div>
+        </div>
+      </div>`;
+    track.appendChild(card);
+  });
+}
