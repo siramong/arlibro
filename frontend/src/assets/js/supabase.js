@@ -1,7 +1,7 @@
 // ====== API CLIENT ======
 // Todas las llamadas a Supabase van a través del backend
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? '/_/backend/api' : '/api');
 
 export const api = {
   async registerVisit(pageData = {}) {

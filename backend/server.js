@@ -158,7 +158,9 @@ app.get('*', (req, res) => {
 // ====== START SERVER ======
 const PORT = process.env.PORT || 3000;
 
-if (!process.env.VERCEL) {
+// In Vercel Web Services, Express must listen on PORT.
+// In Vercel Serverless Functions, AWS_LAMBDA_FUNCTION_NAME is defined and listen should be skipped.
+if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
   app.listen(PORT, () => {
     console.log(`✅ Servidor en http://localhost:${PORT}`);
   });
