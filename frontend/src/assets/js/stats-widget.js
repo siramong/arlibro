@@ -1,4 +1,4 @@
-import { supabase } from './supabase.js';
+import { api } from './supabase.js';
 
 export class StatsWidget {
   constructor() {
@@ -12,11 +12,6 @@ export class StatsWidget {
   }
 
   async init() {
-    if (!supabase) {
-      console.warn('Supabase no disponible');
-      return;
-    }
-
     this.loadStats();
     
     // Actualizar cada 45 segundos
@@ -25,7 +20,7 @@ export class StatsWidget {
 
   async loadStats() {
     try {
-      const total = await supabase.getTotalVisits();
+      const total = await api.getTotalVisits();
       this.renderStats(total);
     } catch (error) {
       console.error('Error cargando stats:', error);

@@ -11,7 +11,7 @@ import { initStarfield } from '../assets/js/modules/starfield.js';
 import { initNavScroll } from '../assets/js/modules/nav-scroll.js';
 import { initStepReveal } from '../assets/js/modules/step-reveal.js';
 import { StatsWidget } from '../assets/js/stats-widget.js';
-import { supabase } from '../assets/js/supabase.js';
+import { api } from '../assets/js/supabase.js';
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Inicializar widget de estadísticas
   new StatsWidget();
-  
-  // Cargar configuración de Supabase
-  supabase.loadConfig().catch(err => console.warn('Config de Supabase no disponible:', err));
 });
